@@ -48,8 +48,7 @@ func main() {
 		c, err := l.Accept()
 
 		if err != nil {
-			c.Close()
-			continue
+			log.Fatal(err)
 		}
 
 		go handler(c, port(privateListeningPort))
