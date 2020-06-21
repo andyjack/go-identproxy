@@ -152,6 +152,5 @@ func handler(c io.ReadWriteCloser, privateListeningPort port) {
 }
 
 func respondError(c io.Writer, request string) {
-	fmt.Println("responding with error")
 	fmt.Fprintln(c, request+":ERROR:NO-USER")
 }
