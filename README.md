@@ -26,12 +26,9 @@ GOOS=freebsd GOARCH=amd64 go build
 
 ## Setup and Installation
 
-* use `sftp` interactively to upload the binary. Place it in `/usr/local/bin`
+* use `sftp` interactively to upload the `go-identproxy` binary. Place it in `/usr/local/bin`
+* use `sftp` interactively to upload the `go-identproxy.rc.sh` script to `/usr/local/etc/rc.d`
 * create a NAT rule in pfsense to forward port 113 traffic inbound to the WAN to `127.0.0.1:113`
-* create a [shellcmd](https://docs.netgate.com/pfsense/en/latest/development/executing-commands-at-boot-time.html)
-  to start `go-identproxy` at startup
-  * shellcmd type: `shellcmd`
-  * command: `daemon /usr/local/bin/go-identproxy 8113`
 
 Port 8113 is what the [irssi
 identd](https://github.com/irssi/scripts.irssi.org/blob/master/scripts/identd.pl)
